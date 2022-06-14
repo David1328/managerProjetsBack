@@ -9,4 +9,6 @@ public class Mapping : DbContext
 	}
 	//Mapeo para empresa
 	public DbSet<UEmpresa> uEmpresa { get; set; }
+	//Mepeo para el usuario
+	public DbSet<UUsuario> user { get; set; }
 }
