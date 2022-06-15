@@ -109,7 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LEmpresa.cs" />
+    <Compile Include="LHistoriaDeUsuario.cs" />
     <Compile Include="LIngresoLogin.cs" />
+    <Compile Include="LProyecto.cs" />
+    <Compile Include="LTicket.cs" />
     <Compile Include="LUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -105,8 +105,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UEstado.cs" />
+    <Compile Include="UHistoriaDeUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UEmpresa.cs" />
+    <Compile Include="UProyecto.cs" />
+    <Compile Include="UTicket.cs" />
     <Compile Include="UUsuario.cs" />
   </ItemGroup>
   <ItemGroup>

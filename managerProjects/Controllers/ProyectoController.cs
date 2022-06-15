@@ -8,18 +8,17 @@ namespace managerProjects.Controllers
 {
 	[EnableCors(origins: "*", headers: "*", methods: "*")]
 
-	[RoutePrefix("api/usuario")]
-	public class UsuarioController : ApiController
+	[RoutePrefix("api/proyecto")]
+	public class ProyectoController : ApiController
     {
-		//Servicios para agregar usuario nuevo
 		[HttpPost]
-		[Route("PostNuevoUsuario")]
-		public IHttpActionResult PostNuevoUsuario(UUsuario usuarioNuevo)
+		[Route("PostNuevoProyecto")]
+		public IHttpActionResult PostNuevoProyecto(UProyecto nuevoProyecto)
 		{
 			try
 			{
-				string mensaje = new LUsuarios().agregarUsuarios(usuarioNuevo);
-				if (mensaje != null)
+				string mensaje = new LProyecto().agregarProyecto(nuevoProyecto);
+				if (mensaje!= null)
 				{
 					return Ok(mensaje);
 				}
@@ -29,24 +28,26 @@ namespace managerProjects.Controllers
 			{
 				return BadRequest("surgio el siguente error: " + ex.Message.ToString());
 			}
+
 		}
 		[HttpGet]
-		[Route("GetInformacionUsuario/{documento}")]
-		public IHttpActionResult GetInformacionUsuario(string documento)
+		[Route("GetListaProyectos")]
+		public IHttpActionResult GetListaProyectos()
 		{
 			try
 			{
-				UUsuario usuarioInformacion = new LUsuarios().getInformacionUsuario(documento);
-				if (usuarioInformacion != null)
+				if (new LProyecto().obtenerProyectos() != null)
 				{
-					return Ok(usuarioInformacion);
+					return Ok(new LProyecto().obtenerProyectos());
 				}
 				return NotFound();
+
 			}
 			catch (Exception ex)
 			{
 				return BadRequest("surgio el siguente error: " + ex.Message.ToString());
 			}
+
 		}
 	}
 }

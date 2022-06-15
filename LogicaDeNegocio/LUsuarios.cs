@@ -19,5 +19,23 @@ namespace LogicaDeNegocio
 			}
 
 		}
+
+		//Obtener información del usuario
+		public UUsuario getInformacionUsuario(string documento)
+		{
+			UUsuario usuarioInformacion = new UUsuario();
+			usuarioInformacion.Documento = documento;
+			if (new Usuario().existeUsuario(usuarioInformacion) != null)
+			{
+				usuarioInformacion = new Usuario().existeUsuario(usuarioInformacion);
+				return usuarioInformacion;
+			}
+			else
+			{
+				return null;
+			}
+
+		}
+
 	}
 }
